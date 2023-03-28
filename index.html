@@ -12,6 +12,9 @@
 			rel="stylesheet" />
 
 		<link rel="stylesheet" href="styles/styles.css" />
+		<script
+			src="https://kit.fontawesome.com/8a4634c38a.js"
+			crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<div class="shadow-bg"></div>
@@ -19,44 +22,49 @@
 			<header class="header">
 				<div class="shadow"></div>
 				<h1><a href="index.html">DrinkSearch</a></h1>
-				<input
-					id="filter"
-					type="text"
-					class="search"
-					placeholder="Wpisz nazwę szukanego napoju" />
+				<div class="interface">
+					<input
+						id="filter"
+						type="text"
+						class="search"
+						placeholder="Wpisz nazwę szukanego napoju" />
+					<button class="add-drink">
+						Dodaj napój<i class="fa-solid fa-plus" style="scale: 1.3"></i>
+					</button>
+				</div>
 			</header>
 
 			<div class="concrete-bg">
 				<div class="bottom-shadow"></div>
 				<div class="drink-list">
 					<h2>Lista dostępnych napojów:</h2>
-					<ul">
-					<li>Mleko</li>
-					<li>Piwo</li>
-					<li>Whisky</li>
-					<li>Pepsi</li>
-					<li>Woda gazowana</li>
-					<li>Sok jabłkowy</li>
-					<li>Sok pomarańczowy</li>
-					<li>Sok bananowy</li>
-					<li>Sok wieloowocowy</li>
-					<li>Wino czerwone</li>
-					<li>Wino białe</li>
-					<li>Woda niegazowana</li>
-					<li>Energy drink</li>
-					<li>Sok pomidorowy</li>
-					<li>Piwo bezalkoholowe</li>
-					<li>Koniak</li>
-					<li>Sprite</li>
-					<li>Mirinda</li>
-					<li>Sok porzeczkowy</li>
-					<li>Woda cytrynowa</li>
-					<li>Nektar z bananów</li>
-					<li>Wódka</li>
-					<li>Kawa</li>
-					<li>Herbata czarna</li>
-					<li>Tonic</li>
-					<li>Herbata ziołowa</li>
+					<ul id="list">
+						<li id="0" onmouseenter ="showDeleteBtn(id)" onmouseleave="hideDeleteBtn(id)">Mleko<i style="display:none" class="fa-solid fa-minus"></i></li>
+						<li id="1" onmouseenter="showDeleteBtn(id)" onmouseleave="hideDeleteBtn(id)">Piwo<i style="display:none" class="fa-solid fa-minus"></i></li>
+						<li id="2" onmouseenter="showDeleteBtn(id)" onmouseleave="hideDeleteBtn(id)">Whisky<i style="display:none" class="fa-solid fa-minus"></i></li>
+						<li id="3" onmouseenter="showDeleteBtn(id)" onmouseleave="hideDeleteBtn(id)">Pepsi<i style="display:none" class="fa-solid fa-minus"></i></li>
+						<li id="4" onmouseenter="showDeleteBtn(id)" onmouseleave="hideDeleteBtn(id)">Woda gazowana<i style="display:none" class="fa-solid fa-minus"></i></li>
+						<li id="5" onmouseenter="showDeleteBtn(id)" onmouseleave="hideDeleteBtn(id)">Sok jabłkowy<i style="display:none" class="fa-solid fa-minus"></i></li>
+						<li id="6" onmouseenter="showDeleteBtn(id)" onmouseleave="hideDeleteBtn(id)">Sok pomarańczowy<i style="display:none" class="fa-solid fa-minus"></i></li>
+						<li id="7" onmouseenter="showDeleteBtn(id)" onmouseleave="hideDeleteBtn(id)">Sok bananowy<i style="display:none" class="fa-solid fa-minus"></i></li>
+						<li id="8" onmouseenter="showDeleteBtn(id)" onmouseleave="hideDeleteBtn(id)">Sok wieloowocowy<i style="display:none" class="fa-solid fa-minus"></i></li>
+						<li id="9" onmouseenter="showDeleteBtn(id)" onmouseleave="hideDeleteBtn(id)">Wino czerwone<i style="display:none" class="fa-solid fa-minus"></i></li>
+						<li id="10" onmouseenter="showDeleteBtn(id)" onmouseleave="hideDeleteBtn(id)">Wino białe<i style="display:none" class="fa-solid fa-minus"></i></li>
+						<li id="11" onmouseenter="showDeleteBtn(id)" onmouseleave="hideDeleteBtn(id)">Woda niegazowana<i style="display:none" class="fa-solid fa-minus"></i></li>
+						<li id="12" onmouseenter="showDeleteBtn(id)" onmouseleave="hideDeleteBtn(id)">Energy drink<i style="display:none" class="fa-solid fa-minus"></i></li>
+						<li id="13" onmouseenter="showDeleteBtn(id)" onmouseleave="hideDeleteBtn(id)">Sok pomidorowy<i style="display:none" class="fa-solid fa-minus"></i></li>
+						<li id="14" onmouseenter="showDeleteBtn(id)" onmouseleave="hideDeleteBtn(id)">Piwo bezalkoholowe<i style="display:none" class="fa-solid fa-minus"></i></li>
+						<li id="15" onmouseenter="showDeleteBtn(id)" onmouseleave="hideDeleteBtn(id)">Koniak<i style="display:none" class="fa-solid fa-minus"></i></li>
+						<li id="16" onmouseenter="showDeleteBtn(id)" onmouseleave="hideDeleteBtn(id)">Sprite<i style="display:none" class="fa-solid fa-minus"></i></li>
+						<li id="17" onmouseenter="showDeleteBtn(id)" onmouseleave="hideDeleteBtn(id)">Mirinda<i style="display:none" class="fa-solid fa-minus"></i></li>
+						<li id="18" onmouseenter="showDeleteBtn(id)" onmouseleave="hideDeleteBtn(id)">Sok porzeczkowy<i style="display:none" class="fa-solid fa-minus"></i></li>
+						<li id="19" onmouseenter="showDeleteBtn(id)" onmouseleave="hideDeleteBtn(id)">Woda cytrynowa<i style="display:none" class="fa-solid fa-minus"></i></li>
+						<li id="20" onmouseenter="showDeleteBtn(id)" onmouseleave="hideDeleteBtn(id)">Nektar z bananów<i style="display:none" class="fa-solid fa-minus"></i></li>
+						<li id="21" onmouseenter="showDeleteBtn(id)" onmouseleave="hideDeleteBtn(id)">Wódka<i style="display:none" class="fa-solid fa-minus"></i></li>
+						<li id="22" onmouseenter="showDeleteBtn(id)" onmouseleave="hideDeleteBtn(id)">Kawa<i style="display:none" class="fa-solid fa-minus"></i></li>
+						<li id="23" onmouseenter="showDeleteBtn(id)" onmouseleave="hideDeleteBtn(id)">Herbata czarna<i style="display:none" class="fa-solid fa-minus"></i></li>
+						<li id="24" onmouseenter="showDeleteBtn(id)" onmouseleave="hideDeleteBtn(id)">Tonic<i style="display:none" class="fa-solid fa-minus"></i></li>
+						<li id="25" onmouseenter="showDeleteBtn(id)" onmouseleave="hideDeleteBtn(id)">Herbata ziołowa<i style="display:none" class="fa-solid fa-minus"></i></li>
 					</ul>
 				</div>
 			</div>

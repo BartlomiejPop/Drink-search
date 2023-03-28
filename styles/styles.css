@@ -82,11 +82,33 @@ a {
 .search {
 	padding: 10px 20px;
 	margin-bottom: 15px;
-	width: 50%;
+	width: 350px;
 	font-size: 16px;
 	border-radius: 5px;
 	background-color: rgba(255, 255, 255, 0.7);
 	outline: none;
+	border: none;
+}
+
+.interface {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.add-drink {
+	display: flex;
+	padding: 0 20px 0 15px;
+	align-items: center;
+	justify-content: space-between;
+	width: 150px;
+	height: 43px;
+	border: none;
+	cursor: pointer;
+	background-color: rgba(255, 255, 255, 0.75);
+	font-size: 15px;
+	border-radius: 5px;
+	color: rgb(93, 93, 93);
 }
 
 .concrete-bg {
@@ -111,10 +133,11 @@ h2 {
 
 ul {
 	padding-bottom: 30px;
-	font-size: 23px;
 }
 
 li {
+	display: flex;
+	justify-content: space-between;
 	max-height: 36px;
 	padding: 8px 30px;
 	border-bottom: 1px solid rgb(226, 226, 226, 0.6);
@@ -124,12 +147,11 @@ li {
 }
 
 li:hover {
-	display: flex;
 	align-items: center;
 	cursor: pointer;
 	font-size: 24px;
 }
 
-li:e {
+li:last-child {
 	border-bottom: 0px;
 }
