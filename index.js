@@ -10,7 +10,10 @@ const addDescriptionEl = document.querySelector(".add-textarea");
 const spanPopupEl = document.querySelector(".span-popup");
 const descriptionModalEl = document.querySelector(".description-modal");
 const descriptionEl = document.querySelector(".description");
+const deletedDrinksBtn = document.querySelector(".deleted-drinks");
+const deletedDrinksModalEl = document.querySelector(".deleted-drinks-modal");
 let idCounter = 27;
+let deletedDrinksArr = [];
 
 const search = (e) => {
 	const text = e.target.value.toLowerCase();
@@ -30,8 +33,12 @@ const showDeleteBtn = (id) => {
 	deleteBtn.addEventListener(
 		"click",
 		_.throttle(() => {
-			// console.log(listEl.children[id]);
+			deletedDrinksArr.push(document.getElementById(id));
+			console.log(deletedDrinksArr);
 			listEl.removeChild(document.getElementById(id));
+			if (deletedDrinksArr.length > 0) {
+				deletedDrinksBtn.style.display = "block";
+			}
 		}, 300)
 	);
 };
@@ -72,9 +79,10 @@ const addElement = () => {
 								class="fa-solid fa-minus"></i>
 						</li>`
 	);
-	spanPopupEl.style.display = "none";
+
 	addDescriptionEl.value = "";
 	addNameEl.value = "";
+	spanPopupEl.style.display = "none";
 	idCounter++;
 	hideModal();
 };
@@ -83,7 +91,9 @@ const hideModal = () => {
 	modalEl.style.opacity = "0";
 	modalShadowEl.style.opacity = "0";
 	descriptionModalEl.style.opacity = "0";
+	deletedDrinksModalEl.style.opacity = "0";
 	setTimeout(() => {
+		deletedDrinksModalEl.style.display = "none";
 		modalEl.style.display = "none";
 		modalShadowEl.style.display = "none";
 		descriptionModalEl.style.display = "none";
@@ -101,7 +111,14 @@ const showDescription = (id) => {
 	modalShadowEl.addEventListener("click", hideModal);
 };
 
-inputFilterEl.addEventListener("input", search);
+const showDeletedDrinks = () => {
+	deletedDrinksModalEl.style.display = "flex";
+	deletedDrinksModalEl.style.opacity = "1";
+	modalShadowEl.style.opacity = "1";
+	modalShadowEl.style.display = "block";
+	modalShadowEl.addEventListener("click", hideModal);
+};
 
+inputFilterEl.addEventListener("input", search);
 addDrinkBtn.addEventListener("click", showModal);
-console.log(descriptionEl.textContent);
+deletedDrinksBtn.addEventListener("click", showDeletedDrinks);
