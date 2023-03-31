@@ -29,7 +29,7 @@
 						class="search"
 						placeholder="Wpisz nazwę szukanego napoju" />
 					<button class="add-drink">
-						Dodaj napój<i class="fa-solid fa-plus" style="scale: 1.3"></i>
+						Dodaj napój<i class="fa-solid fa-plus"></i>
 					</button>
 				</div>
 			</header>
@@ -42,31 +42,37 @@
 						<li
 							id="0"
 							onmouseenter="showDeleteBtn(id)"
-							onmouseleave="hideDeleteBtn(id)">
+							onmouseleave="hideDeleteBtn(id)"
+							onclick="showDescription(id)"
+							description="Mleko ma postać białego, nieprzezroczystego płynu. Jest mieszaniną różnych substancji, które sprawiają, że jednocześnie jest to roztwór właściwy laktozy i części soli mineralnych, roztwór koloidalny kazeiny i części fosforanów oraz emulsja, w której fazą rozproszoną są składniki tłuszczowe, a fazą rozpraszającą – woda.">
 							Mleko<i style="display: none" class="fa-solid fa-minus"></i>
 						</li>
 						<li
 							id="1"
 							onmouseenter="showDeleteBtn(id)"
-							onmouseleave="hideDeleteBtn(id)">
+							onmouseleave="hideDeleteBtn(id)"
+							onclick="showDescription(id)">
 							Piwo<i style="display: none" class="fa-solid fa-minus"></i>
 						</li>
 						<li
 							id="2"
 							onmouseenter="showDeleteBtn(id)"
-							onmouseleave="hideDeleteBtn(id)">
+							onmouseleave="hideDeleteBtn(id)"
+							onclick="showDescription(id)">
 							Whisky<i style="display: none" class="fa-solid fa-minus"></i>
 						</li>
 						<li
 							id="3"
 							onmouseenter="showDeleteBtn(id)"
-							onmouseleave="hideDeleteBtn(id)">
+							onmouseleave="hideDeleteBtn(id)"
+							onclick="showDescription(id)">
 							Pepsi<i style="display: none" class="fa-solid fa-minus"></i>
 						</li>
 						<li
 							id="4"
 							onmouseenter="showDeleteBtn(id)"
-							onmouseleave="hideDeleteBtn(id)">
+							onmouseleave="hideDeleteBtn(id)"
+							onclick="showDescription(id)">
 							Woda gazowana<i
 								style="display: none"
 								class="fa-solid fa-minus"></i>
@@ -74,7 +80,8 @@
 						<li
 							id="5"
 							onmouseenter="showDeleteBtn(id)"
-							onmouseleave="hideDeleteBtn(id)">
+							onmouseleave="hideDeleteBtn(id)"
+							onclick="showDescription(id)">
 							Sok jabłkowy<i
 								style="display: none"
 								class="fa-solid fa-minus"></i>
@@ -82,7 +89,8 @@
 						<li
 							id="6"
 							onmouseenter="showDeleteBtn(id)"
-							onmouseleave="hideDeleteBtn(id)">
+							onmouseleave="hideDeleteBtn(id)"
+							onclick="showDescription(id)">
 							Sok pomarańczowy<i
 								style="display: none"
 								class="fa-solid fa-minus"></i>
@@ -90,7 +98,8 @@
 						<li
 							id="7"
 							onmouseenter="showDeleteBtn(id)"
-							onmouseleave="hideDeleteBtn(id)">
+							onmouseleave="hideDeleteBtn(id)"
+							onclick="showDescription(id)">
 							Sok bananowy<i
 								style="display: none"
 								class="fa-solid fa-minus"></i>
@@ -98,7 +107,8 @@
 						<li
 							id="8"
 							onmouseenter="showDeleteBtn(id)"
-							onmouseleave="hideDeleteBtn(id)">
+							onmouseleave="hideDeleteBtn(id)"
+							onclick="showDescription(id)">
 							Sok wieloowocowy<i
 								style="display: none"
 								class="fa-solid fa-minus"></i>
@@ -106,7 +116,8 @@
 						<li
 							id="9"
 							onmouseenter="showDeleteBtn(id)"
-							onmouseleave="hideDeleteBtn(id)">
+							onmouseleave="hideDeleteBtn(id)"
+							onclick="showDescription(id)">
 							Wino czerwone<i
 								style="display: none"
 								class="fa-solid fa-minus"></i>
@@ -114,13 +125,15 @@
 						<li
 							id="10"
 							onmouseenter="showDeleteBtn(id)"
-							onmouseleave="hideDeleteBtn(id)">
+							onmouseleave="hideDeleteBtn(id)"
+							onclick="showDescription(id)">
 							Wino białe<i style="display: none" class="fa-solid fa-minus"></i>
 						</li>
 						<li
 							id="11"
 							onmouseenter="showDeleteBtn(id)"
-							onmouseleave="hideDeleteBtn(id)">
+							onmouseleave="hideDeleteBtn(id)"
+							onclick="showDescription(id)">
 							Woda niegazowana<i
 								style="display: none"
 								class="fa-solid fa-minus"></i>
@@ -128,7 +141,8 @@
 						<li
 							id="12"
 							onmouseenter="showDeleteBtn(id)"
-							onmouseleave="hideDeleteBtn(id)">
+							onmouseleave="hideDeleteBtn(id)"
+							onclick="showDescription(id)">
 							Energy drink<i
 								style="display: none"
 								class="fa-solid fa-minus"></i>
@@ -136,7 +150,8 @@
 						<li
 							id="13"
 							onmouseenter="showDeleteBtn(id)"
-							onmouseleave="hideDeleteBtn(id)">
+							onmouseleave="hideDeleteBtn(id)"
+							onclick="showDescription(id)">
 							Sok pomidorowy<i
 								style="display: none"
 								class="fa-solid fa-minus"></i>
@@ -144,7 +159,8 @@
 						<li
 							id="14"
 							onmouseenter="showDeleteBtn(id)"
-							onmouseleave="hideDeleteBtn(id)">
+							onmouseleave="hideDeleteBtn(id)"
+							onclick="showDescription(id)">
 							Piwo bezalkoholowe<i
 								style="display: none"
 								class="fa-solid fa-minus"></i>
@@ -152,25 +168,29 @@
 						<li
 							id="15"
 							onmouseenter="showDeleteBtn(id)"
-							onmouseleave="hideDeleteBtn(id)">
+							onmouseleave="hideDeleteBtn(id)"
+							onclick="showDescription(id)">
 							Koniak<i style="display: none" class="fa-solid fa-minus"></i>
 						</li>
 						<li
 							id="16"
 							onmouseenter="showDeleteBtn(id)"
-							onmouseleave="hideDeleteBtn(id)">
+							onmouseleave="hideDeleteBtn(id)"
+							onclick="showDescription(id)">
 							Sprite<i style="display: none" class="fa-solid fa-minus"></i>
 						</li>
 						<li
 							id="17"
 							onmouseenter="showDeleteBtn(id)"
-							onmouseleave="hideDeleteBtn(id)">
+							onmouseleave="hideDeleteBtn(id)"
+							onclick="showDescription(id)">
 							Mirinda<i style="display: none" class="fa-solid fa-minus"></i>
 						</li>
 						<li
 							id="18"
 							onmouseenter="showDeleteBtn(id)"
-							onmouseleave="hideDeleteBtn(id)">
+							onmouseleave="hideDeleteBtn(id)"
+							onclick="showDescription(id)">
 							Sok porzeczkowy<i
 								style="display: none"
 								class="fa-solid fa-minus"></i>
@@ -178,7 +198,8 @@
 						<li
 							id="19"
 							onmouseenter="showDeleteBtn(id)"
-							onmouseleave="hideDeleteBtn(id)">
+							onmouseleave="hideDeleteBtn(id)"
+							onclick="showDescription(id)">
 							Woda cytrynowa<i
 								style="display: none"
 								class="fa-solid fa-minus"></i>
@@ -186,7 +207,8 @@
 						<li
 							id="20"
 							onmouseenter="showDeleteBtn(id)"
-							onmouseleave="hideDeleteBtn(id)">
+							onmouseleave="hideDeleteBtn(id)"
+							onclick="showDescription(id)">
 							Nektar z bananów<i
 								style="display: none"
 								class="fa-solid fa-minus"></i>
@@ -194,19 +216,22 @@
 						<li
 							id="21"
 							onmouseenter="showDeleteBtn(id)"
-							onmouseleave="hideDeleteBtn(id)">
+							onmouseleave="hideDeleteBtn(id)"
+							onclick="showDescription(id)">
 							Wódka<i style="display: none" class="fa-solid fa-minus"></i>
 						</li>
 						<li
 							id="22"
 							onmouseenter="showDeleteBtn(id)"
-							onmouseleave="hideDeleteBtn(id)">
+							onmouseleave="hideDeleteBtn(id)"
+							onclick="showDescription(id)">
 							Kawa<i style="display: none" class="fa-solid fa-minus"></i>
 						</li>
 						<li
 							id="23"
 							onmouseenter="showDeleteBtn(id)"
-							onmouseleave="hideDeleteBtn(id)">
+							onmouseleave="hideDeleteBtn(id)"
+							onclick="showDescription(id)">
 							Herbata czarna<i
 								style="display: none"
 								class="fa-solid fa-minus"></i>
@@ -214,13 +239,15 @@
 						<li
 							id="24"
 							onmouseenter="showDeleteBtn(id)"
-							onmouseleave="hideDeleteBtn(id)">
+							onmouseleave="hideDeleteBtn(id)"
+							onclick="showDescription(id)">
 							Tonic<i style="display: none" class="fa-solid fa-minus"></i>
 						</li>
 						<li
 							id="25"
 							onmouseenter="showDeleteBtn(id)"
-							onmouseleave="hideDeleteBtn(id)">
+							onmouseleave="hideDeleteBtn(id)"
+							onclick="showDescription(id)">
 							Herbata ziołowa<i
 								style="display: none"
 								class="fa-solid fa-minus"></i>
@@ -236,6 +263,10 @@
 			<label class="add-description">Dodaj opis napoju:</label>
 			<textarea class="add-textarea"></textarea>
 			<button class="submit">Dodaj</button>
+			<span class="span-popup">Proszę uzupełnić wszystkie pola!</span>
+		</div>
+		<div class="description-modal">
+			<p class="description"></p>
 		</div>
 		<script
 			async
