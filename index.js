@@ -42,6 +42,8 @@ const hideDeleteBtn = (id) => {
 };
 
 const showModal = () => {
+	modalEl.style.opacity = "1";
+	modalShadowEl.style.opacity = "1";
 	modalEl.style.display = "flex";
 	modalShadowEl.style.display = "block";
 	spanPopupEl.style.display = "none";
@@ -56,16 +58,20 @@ const addElement = () => {
 		spanPopupEl.style.display = "block";
 		return;
 	}
-	listEl.innerHTML += `
+	listEl.insertAdjacentHTML(
+		"beforeend",
+		`
 	<li
 							id=${idCounter}
 							onmouseenter="showDeleteBtn(${idCounter})"
 							onmouseleave="hideDeleteBtn(${idCounter})"
-							onclick="showDescription(${idCounter})">
+							onclick="showDescription(${idCounter})"
+							description="${addDescriptionEl.value}">
 							${addNameEl.value}<i
 								style="display: none"
 								class="fa-solid fa-minus"></i>
-						</li>`;
+						</li>`
+	);
 	spanPopupEl.style.display = "none";
 	addDescriptionEl.value = "";
 	addNameEl.value = "";
@@ -74,14 +80,20 @@ const addElement = () => {
 };
 
 const hideModal = () => {
-	modalEl.style.display = "none";
-	modalShadowEl.style.display = "none";
-	descriptionModalEl.style.display = "none";
-	descriptionEl.style.display = "none";
+	modalEl.style.opacity = "0";
+	modalShadowEl.style.opacity = "0";
+	descriptionModalEl.style.opacity = "0";
+	setTimeout(() => {
+		modalEl.style.display = "none";
+		modalShadowEl.style.display = "none";
+		descriptionModalEl.style.display = "none";
+	}, "600");
 };
 
 const showDescription = (id) => {
 	const productDescription = document.getElementById(id).attributes[4].value;
+	modalShadowEl.style.opacity = "1";
+	descriptionModalEl.style.opacity = "1";
 	modalShadowEl.style.display = "block";
 	descriptionModalEl.style.display = "block";
 	descriptionEl.style.display = "block";
