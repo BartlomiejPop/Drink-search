@@ -155,18 +155,14 @@ a {
 }
 
 .drink-list {
-	padding: 20px 40px;
+	padding: 20px 40px 50px 40px;
 }
 
 h2 {
 	padding: 30px 0;
 }
 
-ul {
-	padding-bottom: 30px;
-}
-
-li {
+.drink-list li {
 	display: flex;
 	justify-content: space-between;
 	max-height: 36px;
@@ -177,18 +173,29 @@ li {
 	transition-timing-function: ease;
 }
 
-li:hover {
+.drink-list li:hover {
 	align-items: center;
 	cursor: pointer;
 	font-size: 24px;
 }
 
-li:last-child {
+.drink-list li:hover i {
+	font-size: 18px;
+}
+
+.drink-list li:last-child {
 	border-bottom: 0px;
 }
 
-.fa-minus {
-	height: 30px;
+.fa-square-minus {
+	padding: 8px 25px;
+	opacity: 0.25;
+	transition: scale 0.3s;
+}
+
+.fa-square-minus:hover {
+	opacity: 1;
+	scale: 1.35;
 }
 
 .add-drink-modal {
@@ -294,23 +301,50 @@ li:last-child {
 	color: #fff;
 }
 
-.deleted-drinks-modal{
+.deleted-drinks-modal {
 	position: fixed;
-	top: 30%;
+	top: 25%;
 	width: 600px;
-	height: 410px;
+	min-height: 410px;
 	display: none;
 	align-items: center;
-	padding: 40px 40px;
+	padding: 15px 40px;
 	flex-direction: column;
 	gap: 20px;
-	background-image: url(https://cdn.pixabay.com/photo/2017/01/07/20/41/alcohol-1961542_960_720.jpg);
+	background-image: url(https://cdn.pixabay.com/photo/2016/11/19/18/46/concrete-1840731_960_720.jpg);
 	border-radius: 8px;
 	overflow: hidden;
 	background-position: 40%;
 	background-attachment: fixed;
 	animation: appear 0.5s;
 	transition: opacity 0.5s;
+}
+
+.deleted-drink {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	padding: 7px 0px 4px 100px;
+	font-size: 20px;
+	border-bottom: 1px solid black;
+}
+
+.save {
+	padding: 5px;
+	margin-left: 50px;
+	background: transparent;
+	border: none;
+	scale: 1.5;
+	cursor: pointer;
+}
+
+.delete-permament {
+	padding: 5px;
+	margin-left: 20px;
+	background: transparent;
+	border: none;
+	scale: 1.5;
+	cursor: pointer;
 }
 
 @keyframes appear {

@@ -12,6 +12,7 @@ const descriptionModalEl = document.querySelector(".description-modal");
 const descriptionEl = document.querySelector(".description");
 const deletedDrinksBtn = document.querySelector(".deleted-drinks");
 const deletedDrinksModalEl = document.querySelector(".deleted-drinks-modal");
+const deletedDrinksListEl = document.querySelector(".deleted-drinks-list");
 let idCounter = 27;
 let deletedDrinksArr = [];
 
@@ -91,7 +92,7 @@ const hideModal = () => {
 	modalEl.style.opacity = "0";
 	modalShadowEl.style.opacity = "0";
 	descriptionModalEl.style.opacity = "0";
-	deletedDrinksModalEl.style.opacity = "0";
+
 	setTimeout(() => {
 		deletedDrinksModalEl.style.display = "none";
 		modalEl.style.display = "none";
@@ -116,7 +117,42 @@ const showDeletedDrinks = () => {
 	deletedDrinksModalEl.style.opacity = "1";
 	modalShadowEl.style.opacity = "1";
 	modalShadowEl.style.display = "block";
-	modalShadowEl.addEventListener("click", hideModal);
+	modalShadowEl.addEventListener("click", () => {
+		deletedDrinksModalEl.style.opacity = "0";
+		modalShadowEl.style.opacity = "0";
+		setTimeout(() => {
+			deletedDrinksModalEl.style.display = "none";
+			modalShadowEl.style.display = "none";
+		}, "600");
+		deletedDrinksListEl.innerHTML = "";
+	});
+
+	deletedDrinksArr.forEach((el) => {
+		if (el) {
+			console.log(el.attributes[4].textContent);
+			deletedDrinksListEl.innerHTML += ` <li id="${el.id}" class="deleted-drink" description="${el.attributes[4].textContent}">${el.textContent}<div><button onclick="saveElement(${el.id})" class="save"><i class="fa-solid fa-share"></i></button><button onclick="deleteElement(${el.id})" class="delete-permament"><i class="fa-solid fa-xmark"></i></button></div></li>`;
+		}
+	});
+};
+
+const saveElement = (id) => {
+	listEl.insertAdjacentHTML(
+		"beforeend",
+		`
+	<li
+							id=${id}
+							onmouseenter="showDeleteBtn(${id})"
+							onmouseleave="hideDeleteBtn(${id})"
+							onclick="showDescription(${id})"
+							description="${document.getElementById(id).attributes[2].textContent}">
+							${document.getElementById(id).textContent}<i
+								style="display: none"
+								class="fa-regular fa-square-minus"></i>
+						</li>`
+	);
+};
+const deleteElement = (id) => {
+	deletedDrinksListEl.removeChild(document.getElementById(id));
 };
 
 inputFilterEl.addEventListener("input", search);
