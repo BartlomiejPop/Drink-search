@@ -16,6 +16,7 @@ const deletedDrinksListEl = document.querySelector(".deleted-drinks-list");
 let idCounter = 27;
 let localCounter = 0;
 let deletedDrinksArr = [];
+let addEl;
 
 const search = (e) => {
 	const text = e.target.value.toLowerCase();
@@ -47,9 +48,14 @@ const showDeleteBtn = (id) => {
 	);
 };
 
+console.log(screen.availWidth < 1280);
+console.log(screen.availWidth);
+
 const hideDeleteBtn = (id) => {
 	const deleteBtn = document.getElementById(id).childNodes[1];
-	deleteBtn.style.display = "none";
+	if (screen.availWidth > 1280) {
+		deleteBtn.style.display = "none";
+	}
 };
 
 const showModal = () => {
@@ -132,7 +138,11 @@ const showDeletedDrinks = () => {
 
 	deletedDrinksArr.forEach((el) => {
 		if (el) {
-			deletedDrinksListEl.innerHTML += ` <li id="${el.id}" class="deleted-drink" description="${el.attributes[4].textContent}">${el.textContent}<div><button onclick="saveElement(${el.id})" class="save"><i class="fa-solid fa-share"></i></button><button onclick="deleteElement(${el.id})" class="delete-permament"><i class="fa-solid fa-xmark"></i></button></div></li>`;
+			addEl = document.createElement("li");
+			addEl.innerHTML = `<li id="${el.id}" class="deleted-drink" description="${el.attributes[4].textContent}">${el.textContent}<div><button onclick="saveElement(${el.id})" class="save"><i class="fa-solid fa-share"></i></button><button onclick="deleteElement(${el.id})" class="delete-permament"><i class="fa-solid fa-xmark"></i></button></div></li>`;
+			deletedDrinksListEl.appendChild(addEl);
+
+			// deletedDrinksListEl.innerHTML += ` <li id="${el.id}" class="deleted-drink" description="${el.attributes[4].textContent}">${el.textContent}<div><button onclick="saveElement(${el.id})" class="save"><i class="fa-solid fa-share"></i></button><button onclick="deleteElement(${el.id})" class="delete-permament"><i class="fa-solid fa-xmark"></i></button></div></li>`;
 		}
 	});
 };
@@ -152,6 +162,7 @@ const saveElement = (id) => {
 								class="fa-regular fa-square-minus"></i>
 						</li>`
 	);
+
 	deletedDrinksArr.forEach((el) => {
 		if (el.id == id) {
 			deletedDrinksArr.splice(el, 1);
