@@ -348,9 +348,11 @@ h2 {
 
 .description-modal {
 	position: fixed;
+	transform: translateY(-50%);
+	top: 50%;
 	display: none;
-	padding: 40px 20px 40px 40px;
-	top: 30%;
+	padding: 40px 20px 40px 20px;
+
 	width: 600px;
 	min-height: 200px;
 	background-image: url(https://media.istockphoto.com/id/525108931/photo/design-of-dark-wood-background.jpg?b=1&s=170667a&w=0&k=20&c=MmYXPZIOizJ7ZAvgRiiiOluCWaI1XN6ng0Vv7e_Mfw0=);
@@ -403,19 +405,21 @@ h2 {
 @media (max-width: 650px) {
 	.deleted-drinks-modal {
 		width: 90%;
+		padding: 40px 5px;
 	}
 }
 
 .deleted-drink {
 	display: flex;
 	width: 100%;
+	gap: 30px;
 	justify-content: space-between;
-	padding: 7px 0px 4px 100px;
+	padding: 7px 50px 4px 50px;
 	font-size: 20px;
 	border-bottom: 1px solid black;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 550px) {
 	.deleted-drink {
 		padding: 0;
 	}
@@ -423,7 +427,7 @@ h2 {
 
 .save {
 	padding: 5px;
-	margin-left: 50px;
+	margin-left: 0px;
 	background: transparent;
 	border: none;
 	scale: 1.5;
@@ -432,7 +436,7 @@ h2 {
 
 @media (max-width: 650px) {
 	.save {
-		scale: 1;
+		scale: 1.2;
 	}
 }
 
@@ -447,7 +451,8 @@ h2 {
 
 @media (max-width: 650px) {
 	.delete-permament {
-		scale: 1;
+		scale: 1.2;
+		margin-left: 5px;
 	}
 }
 

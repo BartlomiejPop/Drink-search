@@ -31,7 +31,6 @@ const search = (e) => {
 
 const showDeleteBtn = (id) => {
 	const deleteBtn = document.getElementById(id).childNodes[1];
-
 	deleteBtn.style.display = "block";
 	deleteBtn.addEventListener(
 		"click",
@@ -47,9 +46,6 @@ const showDeleteBtn = (id) => {
 		}, 300)
 	);
 };
-
-console.log(screen.availWidth < 1280);
-console.log(screen.availWidth);
 
 const hideDeleteBtn = (id) => {
 	const deleteBtn = document.getElementById(id).childNodes[1];
@@ -139,7 +135,7 @@ const showDeletedDrinks = () => {
 	deletedDrinksArr.forEach((el) => {
 		if (el) {
 			addEl = document.createElement("li");
-			addEl.innerHTML = `<li id="${el.id}" class="deleted-drink" description="${el.attributes[4].textContent}">${el.textContent}<div><button onclick="saveElement(${el.id})" class="save"><i class="fa-solid fa-share"></i></button><button onclick="deleteElement(${el.id})" class="delete-permament"><i class="fa-solid fa-xmark"></i></button></div></li>`;
+			addEl.innerHTML = `<li id="${el.id}" class="deleted-drink class${el.id}" description="${el.attributes[4].textContent}">${el.textContent}<div><button onclick="saveElement(${el.id})" class="save"><i class="fa-solid fa-share"></i></button><button onclick="deleteElement(${el.id})" class="delete-permament"><i class="fa-solid fa-xmark"></i></button></div></li>`;
 			deletedDrinksListEl.appendChild(addEl);
 
 			// deletedDrinksListEl.innerHTML += ` <li id="${el.id}" class="deleted-drink" description="${el.attributes[4].textContent}">${el.textContent}<div><button onclick="saveElement(${el.id})" class="save"><i class="fa-solid fa-share"></i></button><button onclick="deleteElement(${el.id})" class="delete-permament"><i class="fa-solid fa-xmark"></i></button></div></li>`;
@@ -162,33 +158,35 @@ const saveElement = (id) => {
 								class="fa-regular fa-square-minus"></i>
 						</li>`
 	);
-
-	deletedDrinksArr.forEach((el) => {
-		if (el.id == id) {
-			deletedDrinksArr.splice(el, 1);
-		}
-		if (deletedDrinksArr.length === 0) {
-			deletedDrinksBtn.style.display = "none";
-			deletedDrinksModalEl.style.opacity = "0";
-			modalShadowEl.style.opacity = "0";
-			setTimeout(() => {
-				deletedDrinksModalEl.style.display = "none";
-				modalShadowEl.style.display = "none";
-			}, "600");
-			deletedDrinksListEl.innerHTML = "";
-		}
-	});
+	// const deletingElAfterRestored = document.querySelector(`.class${id}`);
+	// deletingElAfterRestored.remove();
+	// deletedDrinksArr.forEach((el) => {
+	// 	if (el.id == id) {
+	// 		deletedDrinksArr.splice(el, 1);
+	// 	}
+	// 	if (deletedDrinksArr.length === 0) {
+	// 		deletedDrinksBtn.style.display = "none";
+	// 		deletedDrinksModalEl.style.opacity = "0";
+	// 		modalShadowEl.style.opacity = "0";
+	// 		setTimeout(() => {
+	// 			deletedDrinksModalEl.style.display = "none";
+	// 			modalShadowEl.style.display = "none";
+	// 		}, "600");
+	// 		deletedDrinksListEl.innerHTML = "";
+	// 	}
+	// });
+	deleteElement(id);
 };
 const deleteElement = (id) => {
-	const drinkToDelete = document.getElementById(id);
-	console.log(drinkToDelete);
+	const drinkToDelete = document.querySelector(`.class${id}`);
+	console.log(drinkToDelete.children);
+	drinkToDelete.remove();
 	deletedDrinksArr.forEach((el) => {
 		if (el.id == id) {
-			deletedDrinksArr.splice(el, 1);
-			drinkToDelete.remove();
+			deletedDrinksArr.splice(deletedDrinksArr.indexOf(el), 1);
 		}
 	});
-
+	console.log(deletedDrinksArr);
 	if (deletedDrinksArr.length === 0) {
 		deletedDrinksBtn.style.display = "none";
 		deletedDrinksModalEl.style.opacity = "0";
@@ -199,6 +197,8 @@ const deleteElement = (id) => {
 		}, "600");
 		deletedDrinksListEl.innerHTML = "";
 	}
+	const deleteBtn = document.getElementById(id).childNodes[1];
+	deleteBtn.style.display = "block";
 
 	// deletedDrinksArr.forEach((el) => {
 	// 	if (!el) {
