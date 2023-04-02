@@ -10,10 +10,11 @@ const addDescriptionEl = document.querySelector(".add-textarea");
 const spanPopupEl = document.querySelector(".span-popup");
 const descriptionModalEl = document.querySelector(".description-modal");
 const descriptionEl = document.querySelector(".description");
-// const deletedDrinksBtn = document.querySelector(".deleted-drinks");
+const deletedDrinksBtn = document.querySelector(".deleted-drinks");
 const deletedDrinksModalEl = document.querySelector(".deleted-drinks-modal");
 const deletedDrinksListEl = document.querySelector(".deleted-drinks-list");
 let idCounter = 27;
+let localCounter = 0;
 let deletedDrinksArr = [];
 
 const search = (e) => {
@@ -34,7 +35,9 @@ const showDeleteBtn = (id) => {
 	deleteBtn.addEventListener(
 		"click",
 		_.throttle(() => {
-			deletedDrinksArr.push(document.getElementById(id));
+			if (document.getElementById(id)) {
+				deletedDrinksArr.push(document.getElementById(id));
+			}
 			console.log(deletedDrinksArr);
 			listEl.removeChild(document.getElementById(id));
 			if (deletedDrinksArr.length > 0) {
@@ -112,58 +115,91 @@ const showDescription = (id) => {
 	modalShadowEl.addEventListener("click", hideModal);
 };
 
-// const showDeletedDrinks = () => {
-// 	deletedDrinksModalEl.style.display = "flex";
-// 	deletedDrinksModalEl.style.opacity = "1";
-// 	modalShadowEl.style.opacity = "1";
-// 	modalShadowEl.style.display = "block";
-// 	modalShadowEl.addEventListener("click", () => {
-// 		deletedDrinksModalEl.style.opacity = "0";
-// 		modalShadowEl.style.opacity = "0";
-// 		setTimeout(() => {
-// 			deletedDrinksModalEl.style.display = "none";
-// 			modalShadowEl.style.display = "none";
-// 		}, "600");
-// 		deletedDrinksListEl.innerHTML = "";
-// 	});
+const showDeletedDrinks = () => {
+	deletedDrinksModalEl.style.display = "flex";
+	deletedDrinksModalEl.style.opacity = "1";
+	modalShadowEl.style.opacity = "1";
+	modalShadowEl.style.display = "block";
+	modalShadowEl.addEventListener("click", () => {
+		deletedDrinksModalEl.style.opacity = "0";
+		modalShadowEl.style.opacity = "0";
+		setTimeout(() => {
+			deletedDrinksModalEl.style.display = "none";
+			modalShadowEl.style.display = "none";
+		}, "600");
+		deletedDrinksListEl.innerHTML = "";
+	});
 
-// 	deletedDrinksArr.forEach((el) => {
-// 		if (el) {
-// 			deletedDrinksListEl.innerHTML += ` <li id="${el.id}" class="deleted-drink" description="${el.attributes[4].textContent}">${el.textContent}<div><button onclick="saveElement(${el.id})" class="save"><i class="fa-solid fa-share"></i></button><button onclick="deleteElement(${el.id})" class="delete-permament"><i class="fa-solid fa-xmark"></i></button></div></li>`;
-// 		}
-// 	});
-// };
+	deletedDrinksArr.forEach((el) => {
+		if (el) {
+			deletedDrinksListEl.innerHTML += ` <li id="${el.id}" class="deleted-drink" description="${el.attributes[4].textContent}">${el.textContent}<div><button onclick="saveElement(${el.id})" class="save"><i class="fa-solid fa-share"></i></button><button onclick="deleteElement(${el.id})" class="delete-permament"><i class="fa-solid fa-xmark"></i></button></div></li>`;
+		}
+	});
+};
 
-// const saveElement = (id) => {
-// 	listEl.insertAdjacentHTML(
-// 		"beforeend",
-// 		`
-// 	<li
-// 							id=${id}
-// 							onmouseenter="showDeleteBtn(${id})"
-// 							onmouseleave="hideDeleteBtn(${id})"
-// 							onclick="showDescription(${id})"
-// 							description="${document.getElementById(id).attributes[2].textContent}">
-// 							${document.getElementById(id).textContent}<i
-// 								style="display: none"
-// 								class="fa-regular fa-square-minus"></i>
-// 						</li>`
-// 	);
-// 	deleteElement(id);
-// };
-// const deleteElement = (id) => {
+const saveElement = (id) => {
+	const savingEl = listEl.insertAdjacentHTML(
+		"beforeend",
+		`
+	<li
+							id=${id}
+							onmouseenter="showDeleteBtn(${id})"
+							onmouseleave="hideDeleteBtn(${id})"
+							onclick="showDescription(${id})"
+							description="${document.getElementById(id).attributes[2].textContent}">
+							${document.getElementById(id).textContent}<i
+								style="display: none"
+								class="fa-regular fa-square-minus"></i>
+						</li>`
+	);
+	deletedDrinksArr.forEach((el) => {
+		if (el.id == id) {
+			deletedDrinksArr.splice(el, 1);
+		}
+		if (deletedDrinksArr.length === 0) {
+			deletedDrinksBtn.style.display = "none";
+			deletedDrinksModalEl.style.opacity = "0";
+			modalShadowEl.style.opacity = "0";
+			setTimeout(() => {
+				deletedDrinksModalEl.style.display = "none";
+				modalShadowEl.style.display = "none";
+			}, "600");
+			deletedDrinksListEl.innerHTML = "";
+		}
+	});
+};
+const deleteElement = (id) => {
+	const drinkToDelete = document.getElementById(id);
+	console.log(drinkToDelete);
+	deletedDrinksArr.forEach((el) => {
+		if (el.id == id) {
+			deletedDrinksArr.splice(el, 1);
+			drinkToDelete.remove();
+		}
+	});
 
-// 	deletedDrinksArr.forEach((el) => {
-// 		if (!el) {
-// 			return;
-// 		}
-// 		if (el.id == id) {
-// 			deletedDrinksListEl.removeChild(document.getElementById(id));
-// 			deletedDrinksArr.splice(el, 1);
-// 			console.log(deletedDrinksArr);
-// 		}
-// 	});
-// };
+	if (deletedDrinksArr.length === 0) {
+		deletedDrinksBtn.style.display = "none";
+		deletedDrinksModalEl.style.opacity = "0";
+		modalShadowEl.style.opacity = "0";
+		setTimeout(() => {
+			deletedDrinksModalEl.style.display = "none";
+			modalShadowEl.style.display = "none";
+		}, "600");
+		deletedDrinksListEl.innerHTML = "";
+	}
+
+	// deletedDrinksArr.forEach((el) => {
+	// 	if (!el) {
+	// 		return;
+	// 	}
+	// 	if (el.id == id) {
+	// 		deletedDrinksListEl.removeChild(document.getElementById(id));
+	// 		deletedDrinksArr.splice(el, 1);
+	// 		console.log(deletedDrinksArr);
+	// 	}
+	// });
+};
 
 inputFilterEl.addEventListener("input", search);
 addDrinkBtn.addEventListener("click", showModal);
