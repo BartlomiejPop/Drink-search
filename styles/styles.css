@@ -347,6 +347,11 @@ h2 {
 	cursor: pointer;
 }
 
+.non {
+	display: none;
+	opacity: 0;
+}
+
 @keyframes appear {
 	0% {
 		opacity: 0;
