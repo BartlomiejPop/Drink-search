@@ -238,6 +238,7 @@ h2 {
 }
 
 .drink-list i {
+	padding: 0px 25px;
 	display: none;
 }
 

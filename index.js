@@ -197,8 +197,10 @@ const deleteElement = (id) => {
 		}, "600");
 		deletedDrinksListEl.innerHTML = "";
 	}
-	const deleteBtn = document.getElementById(id).childNodes[1];
-	deleteBtn.style.display = "block";
+	if (screen.availWidth < 1280) {
+		const deleteBtn = document.getElementById(id).childNodes[1];
+		deleteBtn.style.display = "block";
+	}
 
 	// deletedDrinksArr.forEach((el) => {
 	// 	if (!el) {
