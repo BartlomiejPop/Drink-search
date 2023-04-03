@@ -359,7 +359,8 @@ h2 {
 	background-image: url(https://media.istockphoto.com/id/525108931/photo/design-of-dark-wood-background.jpg?b=1&s=170667a&w=0&k=20&c=MmYXPZIOizJ7ZAvgRiiiOluCWaI1XN6ng0Vv7e_Mfw0=);
 	border-radius: 8px;
 	overflow: hidden;
-	background-position: 40%;
+	background-position: 100%;
+
 	object-fit: fill;
 	transition: opacity 0.5s;
 	animation: appear 0.5s;
@@ -455,6 +456,55 @@ h2 {
 		scale: 1.2;
 		margin-left: 5px;
 	}
+}
+
+.delete-popup-div {
+	position: fixed;
+	transform: translateY(-50%);
+	top: 50%;
+	width: 500px;
+	min-height: 200px;
+	display: none;
+	align-items: center;
+	padding: 15px 20px;
+	flex-direction: column;
+	justify-content: center;
+	gap: 40px;
+	background-image: url(https://cdn.pixabay.com/photo/2017/06/26/12/49/red-wine-2443699_960_720.jpg);
+	background-size: cover;
+	border-radius: 8px;
+	overflow: hidden;
+	animation: appear 0.5s;
+	transition: opacity 0.5s;
+}
+
+.delete-popup-text {
+	font-size: 25px;
+	font-weight: bold;
+	text-decoration: underline;
+	color: #ffffff;
+	text-decoration-color: rgb(148, 2, 2);
+	text-decoration-thickness: 2px;
+}
+
+.popup-buttons-wrapper {
+	display: flex;
+	gap: 50px;
+}
+
+.delete-popup-cancel,
+.delete-popup-remove {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 20px;
+	width: 120px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+
+	font-size: 18px;
+	color: #3c3c3c;
 }
 
 @keyframes appear {

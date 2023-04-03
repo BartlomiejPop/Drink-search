@@ -13,6 +13,9 @@ const descriptionEl = document.querySelector(".description");
 const deletedDrinksBtn = document.querySelector(".deleted-drinks");
 const deletedDrinksModalEl = document.querySelector(".deleted-drinks-modal");
 const deletedDrinksListEl = document.querySelector(".deleted-drinks-list");
+const deleteCancelBtn = document.querySelector(".delete-popup-cancel");
+const deletePermamentBtn = document.querySelector(".delete-popup-remove");
+const deletePopupEl = document.querySelector(".delete-popup-div");
 let idCounter = 27;
 let localCounter = 0;
 let deletedDrinksArr = [];
@@ -97,6 +100,7 @@ const hideModal = () => {
 	modalEl.style.opacity = "0";
 	modalShadowEl.style.opacity = "0";
 	descriptionModalEl.style.opacity = "0";
+	deletePopupEl.style.display = "none";
 
 	setTimeout(() => {
 		deletedDrinksModalEl.style.display = "none";
@@ -158,35 +162,16 @@ const saveElement = (id) => {
 								class="fa-regular fa-square-minus"></i>
 						</li>`
 	);
-	// const deletingElAfterRestored = document.querySelector(`.class${id}`);
-	// deletingElAfterRestored.remove();
-	// deletedDrinksArr.forEach((el) => {
-	// 	if (el.id == id) {
-	// 		deletedDrinksArr.splice(el, 1);
-	// 	}
-	// 	if (deletedDrinksArr.length === 0) {
-	// 		deletedDrinksBtn.style.display = "none";
-	// 		deletedDrinksModalEl.style.opacity = "0";
-	// 		modalShadowEl.style.opacity = "0";
-	// 		setTimeout(() => {
-	// 			deletedDrinksModalEl.style.display = "none";
-	// 			modalShadowEl.style.display = "none";
-	// 		}, "600");
-	// 		deletedDrinksListEl.innerHTML = "";
-	// 	}
-	// });
-	deleteElement(id);
-};
-const deleteElement = (id) => {
+
 	const drinkToDelete = document.querySelector(`.class${id}`);
-	console.log(drinkToDelete.children);
+
 	drinkToDelete.remove();
 	deletedDrinksArr.forEach((el) => {
 		if (el.id == id) {
 			deletedDrinksArr.splice(deletedDrinksArr.indexOf(el), 1);
 		}
 	});
-	console.log(deletedDrinksArr);
+
 	if (deletedDrinksArr.length === 0) {
 		deletedDrinksBtn.style.display = "none";
 		deletedDrinksModalEl.style.opacity = "0";
@@ -201,17 +186,44 @@ const deleteElement = (id) => {
 		const deleteBtn = document.getElementById(id).childNodes[1];
 		deleteBtn.style.display = "block";
 	}
+};
+const deleteElement = (id) => {
+	deletePopupEl.style.display = "flex";
+	document.addEventListener("click", (e) => {
+		console.log(e.target);
+		if (e.target === deleteCancelBtn) {
+			deletePopupEl.style.display = "none";
+		} else if (e.target === deletePermamentBtn) {
+			const drinkToDelete = document.querySelector(`.class${id}`);
+			
+			drinkToDelete.remove();
+			deletedDrinksArr.forEach((el) => {
+				if (el.id == id) {
+					deletedDrinksArr.splice(deletedDrinksArr.indexOf(el), 1);
+						if (deletedDrinksArr.length === 0) {
+							deletedDrinksBtn.style.display = "none";
+							deletedDrinksModalEl.style.opacity = "0";
+							modalShadowEl.style.opacity = "0";
+							setTimeout(() => {
+								deletedDrinksModalEl.style.display = "none";
+								modalShadowEl.style.display = "none";
+							}, "600");
+							deletedDrinksListEl.innerHTML = "";
+						}
+				}
+			});
+			deletePopupEl.style.display = "none";
+		} else if (e.target === modalShadowEl) {
+			deletePopupEl.style.display = "none";
+		}
+	});
 
-	// deletedDrinksArr.forEach((el) => {
-	// 	if (!el) {
-	// 		return;
-	// 	}
-	// 	if (el.id == id) {
-	// 		deletedDrinksListEl.removeChild(document.getElementById(id));
-	// 		deletedDrinksArr.splice(el, 1);
-	// 		console.log(deletedDrinksArr);
-	// 	}
-	// });
+
+
+	if (screen.availWidth < 1280) {
+		const deleteBtn = document.getElementById(id).childNodes[1];
+		deleteBtn.style.display = "block";
+	}
 };
 
 inputFilterEl.addEventListener("input", search);
