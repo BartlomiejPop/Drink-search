@@ -195,21 +195,21 @@ const deleteElement = (id) => {
 			deletePopupEl.style.display = "none";
 		} else if (e.target === deletePermamentBtn) {
 			const drinkToDelete = document.querySelector(`.class${id}`);
-			
+
 			drinkToDelete.remove();
 			deletedDrinksArr.forEach((el) => {
 				if (el.id == id) {
 					deletedDrinksArr.splice(deletedDrinksArr.indexOf(el), 1);
-						if (deletedDrinksArr.length === 0) {
-							deletedDrinksBtn.style.display = "none";
-							deletedDrinksModalEl.style.opacity = "0";
-							modalShadowEl.style.opacity = "0";
-							setTimeout(() => {
-								deletedDrinksModalEl.style.display = "none";
-								modalShadowEl.style.display = "none";
-							}, "600");
-							deletedDrinksListEl.innerHTML = "";
-						}
+					if (deletedDrinksArr.length === 0) {
+						deletedDrinksBtn.style.display = "none";
+						deletedDrinksModalEl.style.opacity = "0";
+						modalShadowEl.style.opacity = "0";
+						setTimeout(() => {
+							deletedDrinksModalEl.style.display = "none";
+							modalShadowEl.style.display = "none";
+						}, "600");
+						deletedDrinksListEl.innerHTML = "";
+					}
 				}
 			});
 			deletePopupEl.style.display = "none";
@@ -217,8 +217,6 @@ const deleteElement = (id) => {
 			deletePopupEl.style.display = "none";
 		}
 	});
-
-
 
 	if (screen.availWidth < 1280) {
 		const deleteBtn = document.getElementById(id).childNodes[1];

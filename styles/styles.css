@@ -478,6 +478,13 @@ h2 {
 	transition: opacity 0.5s;
 }
 
+@media (max-width: 650px) {
+	.delete-popup-div {
+		text-align: center;
+		width: 80%;
+	}
+}
+
 .delete-popup-text {
 	font-size: 25px;
 	font-weight: bold;
@@ -490,6 +497,12 @@ h2 {
 .popup-buttons-wrapper {
 	display: flex;
 	gap: 50px;
+}
+
+@media (max-width: 400px) {
+	.popup-buttons-wrapper {
+		gap: 30px;
+	}
 }
 
 .delete-popup-cancel,
@@ -505,6 +518,13 @@ h2 {
 
 	font-size: 18px;
 	color: #3c3c3c;
+}
+
+@media (max-width: 400px) {
+	.delete-popup-cancel,
+	.delete-popup-remove {
+		width: 100px;
+	}
 }
 
 @keyframes appear {
