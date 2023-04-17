@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "notiflix": "^3.2.6",
+    "parcel": "^2.8.3"
+  }
+}

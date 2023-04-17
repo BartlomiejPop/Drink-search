@@ -13,6 +13,7 @@ body {
 	min-height: 100vh;
 	font-family: "Montserrat", sans-serif;
 	background-image: url(../images/wood-bg.jpg);
+
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
@@ -26,9 +27,12 @@ body {
 
 .shadow-bg {
 	position: absolute;
+	top: 0;
 	width: 100%;
-	height: 200%;
+	height: 330%;
+
 	background-color: rgba(0, 0, 0, 0.6);
+
 	z-index: -1;
 }
 
@@ -129,6 +133,12 @@ a {
 	}
 }
 
+.button-interface {
+	display: flex;
+	justify-content: center;
+	gap: 8px;
+}
+
 .add-drink {
 	display: flex;
 	padding: 0 20px 0 15px;
@@ -164,7 +174,6 @@ a {
 
 .deleted-drinks {
 	display: none;
-	margin-left: 170px;
 	padding: 5px;
 	width: 30px;
 	height: 39px;
@@ -180,6 +189,25 @@ a {
 		position: absolute;
 		top: 0;
 	}
+}
+
+.clear-storage {
+	padding: 5px;
+	width: 30px;
+	height: 39px;
+	border: none;
+	cursor: pointer;
+	background-color: rgba(255, 255, 255, 0.75);
+	border-radius: 5px;
+	color: rgb(93, 93, 93);
+}
+
+.clear-storage:hover > .fa-rotate-right {
+	transform: scale(1.4);
+}
+
+.fa-rotate-right {
+	transition: transform 0.2s ease;
 }
 
 .concrete-bg {
@@ -488,6 +516,7 @@ h2 {
 .delete-popup-text {
 	font-size: 25px;
 	font-weight: bold;
+	text-align: center;
 	text-decoration: underline;
 	color: #ffffff;
 	text-decoration-color: rgb(148, 2, 2);
@@ -525,6 +554,14 @@ h2 {
 	.delete-popup-remove {
 		width: 100px;
 	}
+}
+
+.information {
+	margin-top: 10px;
+	max-height: 100%;
+	width: 480px;
+	font-style: italic;
+	font-size: 12px;
 }
 
 @keyframes appear {
