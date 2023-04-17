@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Drink browser</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@400;700&display=swap"
+			rel="stylesheet" />
+
+		<link rel="stylesheet" href="styles/styles.css" />
+		<script
+			src="https://kit.fontawesome.com/8a4634c38a.js"
+			crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div class="shadow-bg"></div>
+		<div class="wrapper">
+			<header class="header">
+				<div class="shadow"></div>
+				<h1><a href="index.html">DrinkSearch</a></h1>
+				<div class="interface">
+					<input
+						id="filter"
+						type="text"
+						class="search"
+						placeholder="Wpisz nazwę szukanego napoju" />
+					<div class="button-interface">
+						<button class="deleted-drinks">
+							<i class="fa-solid fa-trash"></i>
+						</button>
+						<button class="clear-storage">
+							<i class="fa-solid fa-rotate-right"></i>
+						</button>
+						<button class="add-drink">
+							Dodaj napój<i class="fa-solid fa-plus"></i>
+						</button>
+					</div>
+				</div>
+			</header>
+
+			<div class="concrete-bg">
+				<div class="bottom-shadow"></div>
+				<div class="drink-list">
+					<h2>Lista dostępnych napojów:</h2>
+
+					<ul id="list">
+						<li
+							id="0"
+							description="Mleko ma postać białego, nieprzezroczystego płynu. Jest mieszaniną różnych substancji, które sprawiają, że jednocześnie jest to roztwór właściwy laktozy i części soli mineralnych, roztwór koloidalny kazeiny i części fosforanów oraz emulsja, w której fazą rozproszoną są składniki tłuszczowe, a fazą rozpraszającą – woda.">
+							Mleko<i class="fa-regular fa-square-minus"></i>
+						</li>
+						<li
+							id="1"
+							description="Piwo – napój alkoholowy otrzymywany w wyniku fermentacji alkoholowej brzeczki piwnej. Brzeczka stanowi wodny wyciąg ze słodu browarnego z dodatkiem chmielu i ewentualnie innych surowców. W szerokim znaczeniu, zwłaszcza historycznym, piwem określa się napój fermentowany oparty na zbożowym surowcu.">
+							Piwo<i class="fa-regular fa-square-minus"></i>
+						</li>
+						<li
+							id="2"
+							description="Whisky (z gaelickiego: uisge beatha – woda życia; w pisowni irlandzkiej i amerykańskiej whiskey) – napój alkoholowy spirytusowy powstały z destylacji zacieru zbożowego i poddawany dojrzewaniu w drewnianych (głównie dębowych) beczkach.">
+							Whisky<i class="fa-regular fa-square-minus"></i>
+						</li>
+						<li
+							id="3"
+							description="Pepsi została wprowadzona na rynek w roku 1893 przez amerykańskiego farmaceutę Caleba Bradhama w New Bern w Karolinie Północnej. Na początku napój nazywał się Brad's Drink (pol. „Napój Brada”). Składał się z cukru, wody, karmelu, olejku cytrynowego, gałki muszkatołowej i innych naturalnych dodatków.">
+							Pepsi<i class="fa-regular fa-square-minus"></i>
+						</li>
+						<li
+							id="4"
+							description="Woda gazowana pod względem chemicznym jest wodnym roztworem kwasu węglowego oraz kationów metali (magnezu, potasu, sodu i wapnia) oraz anionów (wodorowęglanowych, siarczanowych i chlorkowych). W smaku zaś jest lekko kwaśnawa. Co ciekawe, woda gazowana może dłużej zachować świeżość w porównaniu do wody niegazowanej.">
+							Woda gazowana<i class="fa-regular fa-square-minus"></i>
+						</li>
+						<li
+							id="5"
+							description="Sok jabłkowy to przede wszystkim źródło błonnika pokarmowego, niezbędnego do prawidłowej pracy jelit i trawienia. Zawiera wiele witamin i składników mineralnych, np. witaminę C, A, E, potas oraz zdrowe kwasy. Jabłka i ich przetwory to także bogactwo antyoksydantów, które hamują działanie wolnych rodników.">
+							Sok jabłkowy<i class="fa-regular fa-square-minus"></i>
+						</li>
+						<li
+							id="6"
+							description="Sok pomarańczowy – niesfermentowany sok owocowy otrzymany przez wyciśnięcie miąższu dojrzałych pomarańczy Citrus sinensis.">
+							Sok pomarańczowy<i class="fa-regular fa-square-minus"></i>
+						</li>
+						<li
+							id="7"
+							description="Wyjatkowy sok, w którym poczujesz wyrazisty smak bananów. Dal uzyskania odpowiedniej nuty smakowej dodano naturalny sok winogronowy. Fortuna, to jedyny sok, który pozwala cieszyć sie smakiem bananów bez dosypywania cukru.
+Wykonany z koncentratu, bez dodatku cukru, zawiera tylko naturalnie występujące cukry. Pasteryzowany.">
+							Sok bananowy<i class="fa-regular fa-square-minus"></i>
+						</li>
+						<li
+							id="8"
+							description="Sok 100% wieloowocowy Tymbark składa się z soków z zagęszczonych soków z: jabłek (87%), czerwonych winogron (6%), wiśni (3,5%), czarnych porzeczek (2,5%) i truskawek (1%). Lepszym wyjściem są soki świeżo wyciskane, ewentualnie tłoczone.">
+							Sok wieloowocowy<i class="fa-regular fa-square-minus"></i>
+						</li>
+						<li
+							id="9"
+							description="Wino czerwone powstaje z czerwonych odmian winogron o czarnym lub granatowym kolorze skórek. W przypadku większości szczepów miąższ winogron jest bezbarwny a kolor wina uzyskuje się z zawartych w skórkach barwników (antocyjanów), które muszą być uwolnione podczas maceracji.">
+							Wino czerwone<i class="fa-regular fa-square-minus"></i>
+						</li>
+						<li
+							id="10"
+							description="Wino białe fermentowane jest z samego soku, bez skórek (z nielicznymi wyjątkami). Rzadko też dojrzewa w beczkach dębowych, chociaż i tu zdarzają się wyjątki (np. niektóre tokaje, burgundy, rioja). Większość z nich to produkty wytrawne, chociaż słodkie i półwytrawne spotykane są częściej niż w przypadku czerwonych.">
+							Wino białe<i class="fa-regular fa-square-minus"></i>
+						</li>
+						<li
+							id="11"
+							description="Żywiec Zdrój niegazowany to krystaliczna, górska woda źródlana, idealna do codziennego picia dla każdego, niezależnie od wieku i stanu zdrowia. Produkt posiada pozytywną opinię Centrum Zdrowia Dziecka. Swój delikatny, łagodny smak, Żywiec Zdrój zawdzięcza naturalnej filtracji przez warstwy piaskowca fliszu karpackiego. To żywiecka przyroda nasyciła wodę optymalną kompozycją składników mineralnych, dzięki czemu jest ona odpowiednia do picia na co dzień.">
+							Woda niegazowana<i class="fa-regular fa-square-minus"></i>
+						</li>
+						<li
+							id="12"
+							description="Energy drink to napój energetyzujący i pobudzający, zawierający kofeinę oraz guaranę. Substancje te wpływają na pracę układu nerwowego, pobudzając koncentrację i myślenie. Nie pozostają jednak bez wpływu na pracę serca, często wpływając na przyspieszenie jego akcji.">
+							Energy drink<i class="fa-regular fa-square-minus"></i>
+						</li>
+						<li
+							id="13"
+							description="Sok pomidorowy jest cennym dodatkiem każdej diety wspomagającej odchudzanie. Antyoksydanty, zawarte w pomidorach usuwają toksyny z organizmu i przyspieszają metabolizm. Jest to bardzo niskokaloryczny produkt, który jednocześnie zapewnia organizmowi wszystkie niezbędne do prawidłowego funkcjonowania składniki.">
+							Sok pomidorowy<i class="fa-regular fa-square-minus"></i>
+						</li>
+						<li
+							id="14"
+							description="Piwo bezalkoholowe to rodzaj piwa z zawartością alkoholu poniżej 0,5% całkowitej objętości. Napój jest produkowany w sposób tradycyjny, ale w pewnym momencie fermentacja zostaje przerwana, by powstrzymać wytworzenie etanolu.">
+							Piwo bezalkoholowe<i class="fa-regular fa-square-minus"></i>
+						</li>
+						<li
+							id="15"
+							description="Koniak to trunek o bursztynowej barwie, produkowany z wina pochodzącego z francuskich regionów Charente i Charente-Maritime, w sercu których leży miasto Cognac. Koniak produkuje się z przedestylowanego białego wina, z którego powstaje tzw. eau-de-vie (fr. woda życia), leżakująca w dębowych beczkach przez przynajmniej dwa lata. Następnie łączy się różne eaux-de-vie, aby uzyskać konkretny smak koniaku.">
+							Koniak<i class="fa-regular fa-square-minus"></i>
+						</li>
+						<li
+							id="16"
+							description="Marka napoju gazowanego o smaku cytrynowo-limonkowym należąca do The Coca-Cola Company. Napój Sprite został wprowadzony na rynek w USA w 1961 roku, w Polsce od 1991 roku. Jest to odpowiedź firmy na popularny napój 7 Up firmy Pepsi.">
+							Sprite<i class="fa-regular fa-square-minus"></i>
+						</li>
+						<li
+							id="17"
+							description="Napój gazowany o smaku pomarańczowym. Mirinda to nie tylko połączenie orzeźwiającego owocowego smaku i bąbelków, ale również inspiracja do świetnej zabawy i szalonych pomysłów.">
+							Mirinda<i class="fa-regular fa-square-minus"></i>
+						</li>
+						<li
+							id="18"
+							description="Sok z czarnej porzeczki jest skarbnicą minerałów: potas, fosfor, wapń, magnez, żelazo. A także witamin: C, A, E, B. Porzeczki posiadają bardzo dużą ilość rozpuszczalnego błonnika – pektyn, który przyczynia się do obniżenia poziomu cukru we krwi.">
+							Sok porzeczkowy<i class="fa-regular fa-square-minus"></i>
+						</li>
+						<li
+							id="19"
+							description="Woda z cytryną zawiera przeciwutleniacze, które chronią DNA i białka komórek ciała przed uszkodzeniem przez wolne rodniki. Sok z cytryny obfituje w kwas cytrynowy, czyli związek, który zapobiega wiązaniu się wapnia i powstawaniu nierozpuszczalnych kamieni nerkowych.">
+							Woda cytrynowa<i class="fa-regular fa-square-minus"></i>
+						</li>
+						<li
+							id="20"
+							description="Nektar bananowy marki Hortex to rewelacyjny, pasteryzowany napój, który z pewnością przypadnie do gustu każdemu miłośnikowi słodkich smaków. Charakteryzuje się wyraźnym, słodkim smakiem dojrzałych bananów oraz gładką, przyjemną dla podniebienia konsystencją.">
+							Nektar z bananów<i class="fa-regular fa-square-minus"></i>
+						</li>
+						<li
+							id="21"
+							description="Wódka to napój spirytusowy wytwarzany z alkoholu etylowego pochodzenia rolniczego otrzymywany w wyniku fermentacji – przeprowadzanej z użyciem drożdży – ziemniaków, zbóż albo innych surowców rolniczych.">
+							Wódka<i class="fa-regular fa-square-minus"></i>
+						</li>
+						<li
+							id="22"
+							description="Kawa – napój sporządzany z palonych, a następnie zmielonych lub poddanych instantyzacji ziaren kawowca, zwykle podawany na gorąco. Pochodzi z Etiopii, w Europie pojawiła się około XVI wieku. Jedna z najpopularniejszych używek na świecie i główne źródło kofeiny.">
+							Kawa<i class="fa-regular fa-square-minus"></i>
+						</li>
+						<li
+							id="23"
+							description="Herbata czarna posiada wiele właściwości m.in.:
+Zawiera dużo teiny, przez co działa pobudzająco. Ma działanie antybakteryjne w układzie pokarmowym i wzmaga wydzielanie soków trawiennych. Zmniejsza ciśnienie krwi, przez co również wystąpienie chorób serca.">
+							Herbata czarna<i class="fa-regular fa-square-minus"></i>
+						</li>
+						<li
+							id="24"
+							description="Tonik – bezalkoholowy napój gazowany, w skład którego wchodzi woda sodowa, chinina oraz soki owocowe. Posiada on charakterystyczny, gorzkawy smak.">
+							Tonic<i class="fa-regular fa-square-minus"></i>
+						</li>
+						<li
+							id="25"
+							description=" Herbata ziołowa pomaga usunąć z organizmu toksyny, jest bogata w antyoksydanty i zmniejsza ryzyko zachorowań na choroby neurologiczne.">
+							Herbata ziołowa<i class="fa-regular fa-square-minus"></i>
+						</li>
+					</ul>
+					<p class="information">
+						Elementy dodane początkowo na listę będą przywracane przy
+						odświerzeniu strony i nie mogą być usunięte permamentnie, lecz i tak
+						będą zapisywane na liście usuniętych. Może do doprowadzić do
+						duplikacji elementów i niechcianych efektów.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="modal-shadow"></div>
+		<div class="add-drink-modal">
+			<label for="drink-name" class="add-name">Wpisz nazwę napoju:</label>
+			<input id="drink-name" type="text" class="add-drink-input" />
+			<label for="drink-description" class="add-description"
+				>Dodaj opis napoju:</label
+			>
+			<textarea id="drink-description" class="add-textarea"></textarea>
+			<button class="submit">Dodaj</button>
+			<span class="span-popup">Proszę uzupełnić wszystkie pola!</span>
+		</div>
+		<div class="description-modal">
+			<p class="description"></p>
+		</div>
+		<div class="deleted-drinks-modal">
+			<ul class="deleted-drinks-list"></ul>
+		</div>
+		<div class="delete-popup-div">
+			<span class="delete-popup-text">Usunąć permamentnie?</span>
+			<div class="popup-buttons-wrapper">
+				<button class="delete-popup-cancel">ANULUJ</button>
+				<button class="delete-popup-remove">USUŃ</button>
+			</div>
+		</div>
+		<script
+			async
+			src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+			integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"></script>
+
+		<script src="index.js" type="module"></script>
+	</body>
+</html>
