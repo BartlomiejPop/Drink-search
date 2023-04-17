@@ -1,4 +1,4 @@
-import Notiflix from "notiflix";
+import { Notify } from "notiflix/build/notiflix-notify-aio";
 const inputFilterEl = document.getElementById("filter");
 const listEl = document.querySelector("#list");
 const addDrinkBtn = document.querySelector(".add-drink");
@@ -50,7 +50,7 @@ const showDeleteBtn = (id) => {
 				localStorage.setItem(`savedDrinks`, JSON.stringify(storagedDrinks));
 			}
 			if (document.getElementById(id).id < 26) {
-				Notiflix.Notify.info(
+				Notify.info(
 					"Elementy początkowe nie mogą być usunięte permamentnie z listy. Usuwanie ich może doprowadzić do duplikacji"
 				);
 			}
@@ -112,7 +112,7 @@ const addElement = () => {
 	idCounter++;
 	hideModal();
 	handleDeleteBtn();
-	Notiflix.Notify.success("Pomyślnie dodane napój");
+	Notify.success("Pomyślnie dodane napój");
 };
 
 const hideModal = () => {
@@ -252,7 +252,7 @@ const deleteElement = (id) => {
 			});
 			deletePopupEl.style.display = "none";
 			if (+drinkToDelete.id > 25) {
-				Notiflix.Notify.success("Usunięto permamentnie.");
+				Notify.success("Usunięto permamentnie.");
 			}
 		} else if (e.target === modalShadowEl) {
 			deletePopupEl.style.display = "none";
@@ -318,7 +318,7 @@ clearStorageBtn.addEventListener("click", () => {
 		if (e.target === deletePermamentBtn) {
 			localStorage.clear();
 			deletePopupEl.style.display = "none";
-			Notiflix.Notify.success(
+			Notify.success(
 				"Pamięć lokalna usunięta. Strona zostanie przywrócona do stanu pierwotnego po odświerzeniu."
 			);
 		} else if (e.target === deleteCancelBtn) {
